@@ -1,0 +1,8 @@
+figure {
+    width: fit-content;
+}
+
+figure img {
+    height: 300px;
+    width: auto;
+}
