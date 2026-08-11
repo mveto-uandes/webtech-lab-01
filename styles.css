@@ -1,23 +1,86 @@
+:root {
+    --bg: #f7f5f0;
+    --text: #1a1a1a;
+    --accent: #1d4ed8;
+    --dark-bg: #1a1a1a;
+    --dark-text: #f7f5f0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header,
+main,
+footer {
+    padding: 0 2rem;
+}
+
+main {
+    margin-bottom: 3rem;
+}
+
+a {
+    color: var(--accent);
+}
+
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+header,
+footer {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+header a,
+footer a {
+    color: var(--dark-text);
+}
+
 figure {
     width: fit-content;
+    max-width: 100%;
 }
 
 figure img {
     height: 300px;
     width: auto;
+    max-width: 100%;
+    object-fit: contain;
 }
 
-/* header: title | nav, side by side */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* about: banner heading on top, 2-column grid below */
 #about {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 1rem;
 }
 
@@ -40,26 +103,29 @@ header {
     grid-row: 2 / 4;
 }
 
-/* projects: banner heading, then one row per project */
 #projects {
     display: grid;
     gap: 1rem;
 }
 
-/* each project: text on the left, image on the right, aligned across rows */
 #projects article {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 1rem;
     align-items: start;
 }
 
-/* contact form: fields stacked in a narrow column */
+#contact {
+    text-align: center;
+}
+
 #contact form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
 }
 
 #contact form div {
@@ -68,7 +134,6 @@ header {
     gap: 0.25rem;
 }
 
-/* footer: links laid out in a row, icon inline with each */
 footer {
     display: flex;
     gap: 1.5rem;
@@ -83,4 +148,63 @@ footer a {
 footer .icon {
     height: 1.2em;
     width: auto;
+}
+
+@media (max-width: 768px) {
+    header,
+    main,
+    footer {
+        padding: 0 1rem;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #about {
+        grid-template-columns: 1fr;
+    }
+
+    #about .about-text,
+    #about .favorite-quote,
+    #about .profile-photo {
+        grid-column: 1;
+    }
+
+    #about .about-text {
+        grid-row: 2;
+    }
+
+    #about .favorite-quote {
+        grid-row: 3;
+    }
+
+    #about .profile-photo {
+        grid-row: 4;
+    }
+
+    #projects article {
+        grid-template-columns: 1fr;
+    }
+
+    figure {
+        width: 100%;
+    }
+
+    figure img {
+        width: 100%;
+        height: auto;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
 }
