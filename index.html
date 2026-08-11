@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matias Veto</title>
+    <link rel="icon" href="images/icons/duck.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,24 +22,38 @@
     <main>
         <section id="about">
             <h2>About me</h2>
-            <p>Hi, my name is Matias Veto. I am a Civil Engineering student majoring in Computer Science at Universidad de los Andes. I started in 2023, but I left high school in 2020, as I spent two years studying psychology (I don't see myself working as a psychologist, thats why I left). I enjoy playing video games, playing music, and rock climbing (typical engineer).</p>
 
-            <h3>Skills</h3>
-            <ul>
-                <li>Languages: Spanish (Native), English (Native)</li>
-                <li>Programming Languages: Python, C, C++, JavaScript</li>
-                <li>Web Development: HTML, CSS</li>
-                <li>Database Management: PostgreSQL</li>
-                <li>Software Development: Git</li>
-            </ul>
+            <div class="about-text">
+                <p>Hi, my name is Matias Veto. I am a Civil Engineering student majoring in Computer Science at Universidad de los Andes. I started in 2023, but I left high school in 2020, as I spent two years studying psychology (I don't see myself working as a psychologist, thats why I left). I enjoy playing video games, playing music, and rock climbing (typical engineer).</p>
+
+                <h3>Skills</h3>
+                <ul>
+                    <li>Languages: Spanish (Native), English (Native)</li>
+                    <li>Programming Languages: Python, C, C++, JavaScript</li>
+                    <li>Web Development: HTML, CSS</li>
+                    <li>Database Management: PostgreSQL</li>
+                    <li>Software Development: Git</li>
+                </ul>
+            </div>
+
+            <blockquote class="favorite-quote">
+                <p>Let your plans be dark and impenetrable as night, and when you move, fall like a thunderbolt.</p>
+                <p>— Sun Tzu, <cite>The Art of War</cite></p>
+            </blockquote>
+
+            <figure class="profile-photo">
+                <img src="images/profile.png" alt="Photo of Matias Veto">
+            </figure>
         </section>
 
         <section id="projects">
             <h2>Projects</h2>
 
             <article>
-                <h3><a href="https://github.com/Matukingg/Minesweeper-mintuco" target="_blank">Minesweeper</a></h3>
-                <p>A classic Minesweeper game for linux, using C++ with the allegro game engine. It features a profile system to save completion times and hand drawn sprites.</p>
+                <div class="project-text">
+                    <h3><a href="https://github.com/Matukingg/Minesweeper-mintuco" target="_blank">Minesweeper</a></h3>
+                    <p>A classic Minesweeper game for linux, using C++ with the allegro game engine. It features a profile system to save completion times and hand drawn sprites.</p>
+                </div>
                 <figure>
                     <img src="images/minesweeper.png" alt="Minesweeper Screenshot">
                     <figcaption>Minesweeper Game Screenshot</figcaption>
@@ -46,8 +61,10 @@
             </article>
 
             <article>
-                <h3><a href="https://github.com/Matukingg/Typespeed-mintuco" target="_blank">Typespeed (WIP)</a></h3>
-                <p>A typing speed game for linux, using C++ with the allegro game engine. It features multiple languages, including programming languages!!!, with text parser to be able to easily add more practice texts</p>
+                <div class="project-text">
+                    <h3><a href="https://github.com/Matukingg/Typespeed-mintuco" target="_blank">Typespeed (WIP)</a></h3>
+                    <p>A typing speed game for linux, using C++ with the allegro game engine. It features multiple languages, including programming languages!!!, with text parser to be able to easily add more practice texts</p>
+                </div>
                 <figure>
                     <img src="images/typespeed.png" alt="Typespeed Screenshot">
                     <figcaption>Typespeed Game Screenshot</figcaption>
@@ -55,8 +72,10 @@
             </article>
 
             <article>
-                <h3><a href="planes-japon-2026.vercel.app" target="_blank">Trip planner</a></h3>
-                <p>A trip planner I made for a recent trip I made to Japan. The cool part is the map feature. It will be further developed into a restaurant finder for Chile (don't tell anyone yet).</p>
+                <div class="project-text">
+                    <h3><a href="https://planes-japon-2026.vercel.app" target="_blank">Trip planner</a></h3>
+                    <p>A trip planner I made for a recent trip I made to Japan. The cool part is the map feature. It will be further developed into a restaurant finder for Chile (don't tell anyone yet).</p>
+                </div>
                 <figure>
                     <img src="images/mapa-planificador.png" alt="Trip Planner Screenshot">
                     <figcaption>Trip Planner Screenshot</figcaption>
@@ -66,11 +85,32 @@
 
         <section id="contact">
             <h2>Contact</h2>
-            <p> --------contact form section-----------</p>
+            <form>
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+                <button type="submit">Send</button>
+            </form>
         </section>
     </main>
     <footer>
-        <a href="https://github.com/mveto-uandes/webtech-lab-01" target="_blank">GitHub Link</a>
+        <a href="https://github.com/mveto-uandes" target="_blank">
+            <img src="images/icons/github.svg" alt="" class="icon">
+            GitHub University profile
+        </a>
+        <a href="https://github.com/Matukingg" target="_blank">
+            <img src="images/icons/github.svg" alt="" class="icon">
+            GitHub personal profile
+        </a>
     </footer>
 </body>
 </html>
