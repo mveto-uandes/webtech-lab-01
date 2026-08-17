@@ -14,9 +14,11 @@
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#collection">Books</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <button type="button" id="theme-toggle" aria-pressed="false">Dark mode</button>
     </header>
 
     <main>
@@ -84,22 +86,65 @@
             </article>
         </section>
 
+        <section id="collection">
+            <h2>Books I've read</h2>
+
+            <div class="book-filters">
+                <div>
+                    <label for="book-search">Search by title or author</label>
+                    <input type="text" id="book-search" name="book-search">
+                </div>
+                <div class="book-categories" role="group" aria-label="Filter by type">
+                    <button type="button" class="category-filter" data-type="all" aria-pressed="true">All</button>
+                </div>
+            </div>
+
+            <p id="book-empty-message" hidden>No books match your search.</p>
+
+            <ul id="book-list"></ul>
+
+            <h3>Add a book</h3>
+            <form id="add-book-form">
+                <div>
+                    <label for="book-title">Title</label>
+                    <input type="text" id="book-title" name="book-title" required>
+                </div>
+                <div>
+                    <label for="book-author">Author</label>
+                    <input type="text" id="book-author" name="book-author" required>
+                </div>
+                <div>
+                    <label for="book-language">Language</label>
+                    <input type="text" id="book-language" name="book-language" required>
+                </div>
+                <div>
+                    <label for="book-type">Type</label>
+                    <input type="text" id="book-type" name="book-type" required>
+                </div>
+                <button type="submit">Add book</button>
+            </form>
+        </section>
+
         <section id="contact">
             <h2>Contact</h2>
-            <form>
+            <form id="contact-form" novalidate>
                 <div>
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name">
+                    <span class="error-message" id="name-error"></span>
                 </div>
                 <div>
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email">
+                    <span class="error-message" id="email-error"></span>
                 </div>
                 <div>
                     <label for="message">Message</label>
                     <textarea id="message" name="message"></textarea>
+                    <span class="error-message" id="message-error"></span>
                 </div>
                 <button type="submit">Send</button>
+                <p id="contact-success" hidden>Thanks! Your message has been received.</p>
             </form>
         </section>
     </main>
@@ -117,5 +162,6 @@
             GitHub personal profile
         </a>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
