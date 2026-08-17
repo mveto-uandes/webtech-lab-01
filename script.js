@@ -7,6 +7,8 @@ const books = [
     { title: "1984", author: "George Orwell", language: "English", type: "Science Fiction", read: true },
     { title: "Meditations", author: "Marcus Aurelius", language: "English", type: "Philosophy", read: false },
     { title: "2666", author: "Roberto Bolaño", language: "Spanish", type: "Fiction", read: false },
+    { title: "One Piece", author: "Eiichiro Oda", language: "Japanese", type: "Manga", read: true },
+    { title: "Vagabond", author: "Takehiko Inoue", language: "Japanese", type: "Manga", read: true },
 ];
 
 let nextBookId = 0;
